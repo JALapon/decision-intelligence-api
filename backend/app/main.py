@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from .api.routes import router
 from .core.logging import configure_logging
 
+# Configure logging
 configure_logging()
 
+# Initialize FastAPI app
 app = FastAPI(
     title="Decision Intelligence API (ML + LLM)",
     version="1.0.0",

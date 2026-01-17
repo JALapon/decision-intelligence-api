@@ -7,8 +7,10 @@ from backend.app.analysis.anomalies import run_anomaly_detection
 from backend.app.ml.model import run_baseline_model
 from backend.app.llm.client import generate_llm_insights
 
+# Define the API router
 router = APIRouter()
 
+# Endpoint to upload a file and start analysis
 @router.post("/analyze")
 async def analyze(background_tasks: BackgroundTasks, file: UploadFile = File(...), target: str = Form(None), task: str = Form("auto")):
     job_id = str(uuid.uuid4())
@@ -17,10 +19,12 @@ async def analyze(background_tasks: BackgroundTasks, file: UploadFile = File(...
     background_tasks.add_task(run_job, job_id, content, target, task)
     return {"job_id": job_id, "status": "queued"}
 
+# Endpoint to check job status and get results
 @router.get("/results/{job_id}")
 def results(job_id: str):
     return job_store.get(job_id)
 
+# Function to run the analysis job
 def run_job(job_id, content, target, task):
     df, profile = load_csv_to_df(content)
     stats = run_stats_analysis(df)
