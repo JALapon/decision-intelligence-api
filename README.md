@@ -4,6 +4,11 @@ A production-style AI engineering project that exposes machine learning and larg
 
 This system ingests raw CSV data, performs automated analysis and baseline machine learning, and generates structured, executive-ready insights using an LLM abstraction layer. The project is designed to demonstrate AI Engineering skills such as system design, ML pipelines, API development, and LLM integration — not just notebook-based experimentation.
 
+
+## 📸 API Preview (Swagger UI)
+
+<img width="2060" height="788" alt="decision-intelligence-api-image" src="https://github.com/user-attachments/assets/7a5d6ffe-a2cf-42fc-b1a1-6eae8d920f90" />
+
 ---
 
 ## What This Project Does
@@ -82,7 +87,7 @@ cd decision-intelligence-api
 
 Windows (PowerShell)
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\Activate
 
 macOS / Linux
 python3 -m venv .venv
