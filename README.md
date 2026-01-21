@@ -73,7 +73,7 @@ decision-intelligence-api/
 
 ### 1. Clone the Repository
 
-git clone https://github.com/<your-username>/decision-intelligence-api.git
+git clone https://github.com/JALapon/decision-intelligence-api.git
 cd decision-intelligence-api
 
 ---
